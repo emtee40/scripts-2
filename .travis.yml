@@ -2,4 +2,4 @@ language: python
 python:
   - "2.7"
 install: "pip install -r dependencies.txt"
-script: "python fetch/klassikaraadio.py 'http://klassikaraadio.err.ee/kuularhiiv?saade=255&kid=113' --pretend"
+script: "sh tests.sh"
