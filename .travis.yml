@@ -1,0 +1,8 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+  - "3.3"
+install: "pip install -r dependencies.txt"
+script: "python fetch/klassikaraadio.py 'http://klassikaraadio.err.ee/kuularhiiv?saade=255&kid=113' --pretend"
