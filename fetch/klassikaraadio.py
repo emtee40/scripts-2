@@ -66,7 +66,7 @@ def download(url, file_path, title, nr, total):
 	    file_size_dl += len(buffer)
 	    f.write(buffer)
 	    status = r"[%3.2f%%]" % (file_size_dl * 100. / total_size)
-	    sys.stdout.write("\r(%d/%d) r%s %s" % (nr, total, title, status))
+	    sys.stdout.write("\r(%d/%d) %s %s" % (nr, total, title, status))
 	    sys.stdout.flush()
 	
 	f.close()
@@ -97,7 +97,7 @@ parser = argparse.ArgumentParser(description='Fetches episodes from Klassikaraad
 parser.add_argument('url', metavar='URL', help='URL of the Klassikaraadio episode list')
                    
 parser.add_argument('--pretend', dest='pretend', action='store_true',
-                   help='sum the integers (default: find the max)')
+                   help='Does not download any files')
 
 args = parser.parse_args()
 
