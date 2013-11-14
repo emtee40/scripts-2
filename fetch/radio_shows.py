@@ -91,7 +91,7 @@ class Raadio2:
 			if pretend:
 				print episode['title']
 			else:
-				download(episode['url'], self.title + '/' + episode['title'] + '.mp3', episode['title'], i, total)
+				download(episode['url'], self.title + '/' + episode['title'].replace('/', '-') + '.mp3', episode['title'], i, total)
 				i += 1
 	
 
