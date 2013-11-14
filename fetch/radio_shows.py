@@ -77,7 +77,10 @@ class Raadio2:
 		episodes = []
 		container = parsed_html.body.find('div', attrs={'id': 'centercolumn'})
 		for paragraph in container.find_all('p'):
-			url = paragraph.find_all('a')[1].get('href')
+			links = paragraph.find_all('a')
+			if not links:
+				continue
+			url = links[1].get('href')
 			title = paragraph.contents[0].strip('(').strip()
 			if title.startswith(self.title):
 				title = title[len(self.title):].strip()
